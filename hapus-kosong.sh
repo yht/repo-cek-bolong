@@ -16,7 +16,7 @@ fi
 
 for i in `cat $repo_pkglist | grep Filename: | awk '{print $2}'`
 do
- if [ ! -s "$repo_dir/$i" ]
+ if [ -f "$repo_dir/$i" ] && [ ! -s "$repo_dir/$i" ]
  then
   echo $repo_dir/$i
   rm $repo_dir/$i
